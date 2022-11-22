@@ -469,6 +469,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcb9635673382ea41946d6bc3f853cfc, type: 3}
+--- !u!1 &815977553804153227 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 815977554368596901, guid: dcb9635673382ea41946d6bc3f853cfc,
+    type: 3}
+  m_PrefabInstance: {fileID: 815977553804153226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3587652609316325197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -476,6 +482,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6241132709299240337, guid: 8d569106618f6464f99df50572f1370d,
+        type: 3}
+      propertyPath: spiketrap
+      value: 
+      objectReference: {fileID: 3587652609316325198}
+    - target: {fileID: 6241132709299240337, guid: 8d569106618f6464f99df50572f1370d,
+        type: 3}
+      propertyPath: playerCharacter
+      value: 
+      objectReference: {fileID: 815977553804153227}
+    - target: {fileID: 6241132709299240337, guid: 8d569106618f6464f99df50572f1370d,
+        type: 3}
+      propertyPath: spiketrapAudioSource
+      value: 
+      objectReference: {fileID: 3587652609316325198}
     - target: {fileID: 6241132709299240341, guid: 8d569106618f6464f99df50572f1370d,
         type: 3}
       propertyPath: m_RootOrder
@@ -538,6 +559,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d569106618f6464f99df50572f1370d, type: 3}
+--- !u!82 &3587652609316325198 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6549298270058099935, guid: 8d569106618f6464f99df50572f1370d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3587652609316325197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8266442261676195576
 PrefabInstance:
   m_ObjectHideFlags: 0
