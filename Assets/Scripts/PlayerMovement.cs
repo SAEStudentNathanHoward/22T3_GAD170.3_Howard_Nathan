@@ -39,6 +39,10 @@ public class PlayerMovement : MonoBehaviour
     // To handle vertical movement
     private Vector3 velocity;
 
+    // Moved these values to public so that I can access them in other scripts, Also serialized so that it is visible in inspector for debugging
+    [SerializeField] public float xValue;
+    [SerializeField] public float zValue;
+
     private void Start()
     {
         // If the variable "characterController" is empty...
@@ -56,8 +60,8 @@ public class PlayerMovement : MonoBehaviour
         pitch -= verticalSpeed * Input.GetAxis("Mouse Y");
 
         // Get the Left/Right and Forward/Back values of the input being used (WASD, Joystick etc.)
-        float xValue = Input.GetAxis("Horizontal");
-        float zValue = Input.GetAxis("Vertical");
+        xValue = Input.GetAxis("Horizontal");
+        zValue = Input.GetAxis("Vertical");
 
         // Let the character jump if they are on the ground and they press the jump button
         if (Input.GetButtonDown("Jump") && isGrounded)

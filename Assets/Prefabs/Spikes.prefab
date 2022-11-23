@@ -272,6 +272,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd4315c4c6ee3842b485dfa87ed0114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene:
-    m_Handle: 0
-  spiketrap: {fileID: 0}
+  playerCharacter: {fileID: 815977554368596901, guid: dcb9635673382ea41946d6bc3f853cfc,
+    type: 3}
+  respawnPointGameObject: {fileID: 4430195473450020853, guid: 25015e8cc25844242b193cc91c3cc6ca,
+    type: 3}
+  respawnVectorX: 0
+  respawnVectorY: 0
+  respawnVectorZ: 0
