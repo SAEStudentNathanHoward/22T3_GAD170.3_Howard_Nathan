@@ -21,6 +21,9 @@ namespace NathanHoward
         [SerializeField] private float respawnVectorY;
         [SerializeField] private float respawnVectorZ;
 
+        // Declaration of the Sound Effect used
+        [SerializeField] private AudioSource spikeSoundEffect;
+
         // Method that sets the Vector positions (X,Y,Z) based on the respawnPointGameObject position
         private void Start()
         {
@@ -40,7 +43,6 @@ namespace NathanHoward
             // Getting the current scene name from the Unity SceneManager
             //currentScene = SceneManager.GetActiveScene();
             //Debug.Log("The current scene is set to " + currentScene.name);
-            //soundManager.killedBySpikes = true;
             // Reloading the current scene
             //SceneManager.LoadScene(currentScene.name);
             //Debug.Log("The scene has been reset");
@@ -51,6 +53,9 @@ namespace NathanHoward
             playerCharacter.transform.position = new Vector3(respawnVectorX, respawnVectorY, respawnVectorZ);
             playerCharacter.GetComponent<CharacterController>().enabled = true;
             playerCharacter.GetComponent<PlayerMovement>().enabled = true;
+
+            // Plays the sound effect attached to the script
+            spikeSoundEffect.Play();
         }
     }
 }

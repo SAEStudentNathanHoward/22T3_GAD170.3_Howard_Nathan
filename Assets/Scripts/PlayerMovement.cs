@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement Variables")]
     // These variables (visible in the inspector) are for you to set up to match the right feel
-    [SerializeField] private float movementSpeed = 12f;
+    [SerializeField] public float movementSpeed = 12f;
     [SerializeField] private float horizontalSpeed = 2.0f;
     [SerializeField] private float verticalSpeed = 2.0f;
 

@@ -279,3 +279,4 @@ MonoBehaviour:
   respawnVectorX: 0
   respawnVectorY: 0
   respawnVectorZ: 0
+  spikeSoundEffect: {fileID: 6549298270058099935}
