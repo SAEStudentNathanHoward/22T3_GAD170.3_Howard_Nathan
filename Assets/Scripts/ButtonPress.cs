@@ -18,7 +18,7 @@ namespace NathanHoward
         public bool playerIsClose = false;
 
         // Update method to check for button presses
-        public void Update()
+        private void Update()
         {
             // Checks to make sure the player is close AND pressing the activate button
             if (Input.GetKeyDown(KeyCode.Return) && playerIsClose == true)
@@ -27,7 +27,7 @@ namespace NathanHoward
                 Debug.Log("the button is pressed");
 
                 // Code that toggles the attached laser grid on or off
-                if (laserGrid.active == true)
+                if (laserGrid.activeSelf == true)
                 {
                     laserGrid.SetActive(false);
                 }
