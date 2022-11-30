@@ -225,6 +225,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: f1cabde642c0bc84daa2e4e05c67a19d,
         type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: f1cabde642c0bc84daa2e4e05c67a19d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -278,11 +283,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisSpotlight: {fileID: 2121686421515067055}
+  thisSpotlightBeam: {fileID: 7799421735890143500}
   playerCharacter: {fileID: 815977554368596901, guid: dcb9635673382ea41946d6bc3f853cfc,
     type: 3}
 --- !u!4 &1944156401016400751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1cabde642c0bc84daa2e4e05c67a19d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2121686422080392324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7799421735890143500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: f1cabde642c0bc84daa2e4e05c67a19d,
     type: 3}
   m_PrefabInstance: {fileID: 2121686422080392324}
   m_PrefabAsset: {fileID: 0}

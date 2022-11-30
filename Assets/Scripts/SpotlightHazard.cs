@@ -8,6 +8,7 @@ namespace NathanHoward
     {
         // Declaration of the spotlight and the player character used for tracking and collision
         [SerializeField] private GameObject thisSpotlight;
+        [SerializeField] private GameObject thisSpotlightBeam;
         [SerializeField] private GameObject playerCharacter;
 
         // Declaration and setting a bool for wether the character is seen or not
@@ -41,7 +42,10 @@ namespace NathanHoward
             {
                 // Constantly updating the lights transform to look at the player character
                 thisSpotlight.transform.LookAt(playerCharacter.transform);
+                
             }
+
+            
         }
     }
 }

@@ -39,7 +39,7 @@ namespace NathanHoward
         {
             Debug.Log("Collision with Spikes");
 
-            /// OLD SCRIPT THAT RESETS SCENE
+            // OLD SCRIPT THAT RESETS SCENE
             // Getting the current scene name from the Unity SceneManager
             //currentScene = SceneManager.GetActiveScene();
             //Debug.Log("The current scene is set to " + currentScene.name);
