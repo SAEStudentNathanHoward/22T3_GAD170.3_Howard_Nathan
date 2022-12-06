@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 namespace NathanHoward
-{
-    public class ButtonPress : MonoBehaviour
+{ 
+    public class TransientBlockButtonPress : MonoBehaviour
     {
         // Declaration of the GameObjects used in this code
         // Serialized so I can set them in the inspector
         [SerializeField] private GameObject playerCharacter;
-        [SerializeField] private GameObject laserGrid;
         [SerializeField] private GameObject buttonInstruction;
 
         // Boolean used to tell whether the player is in contact with the buttons zone
@@ -21,20 +18,14 @@ namespace NathanHoward
         private void Update()
         {
             // Checks to make sure the player is close AND pressing the activate button
-            if (Input.GetKeyDown(KeyCode.Return) && playerIsClose == true)
+            if (Input.GetKeyDown(KeyCode.Return) && playerIsClose == true && GameEvents.OnTangibleBlockButtonPressEvent != null)
             {
                 Debug.Log("The enter key has been pressed.");
                 Debug.Log("the button is pressed");
-
-                // Code that toggles the attached laser grid on or off
-                if (laserGrid.activeSelf == true)
-                {
-                    laserGrid.SetActive(false);
-                }
-                else
-                {
-                    laserGrid.SetActive(true);
-                }
+                
+                //Announcing the block toggler to our events script
+                GameEvents.OnTangibleBlockButtonPressEvent();
+               
             }
         }
 
@@ -55,3 +46,4 @@ namespace NathanHoward
         }
     }
 }
+

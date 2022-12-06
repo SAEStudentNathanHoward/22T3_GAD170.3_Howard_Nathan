@@ -10,6 +10,12 @@ namespace NathanHoward
         [SerializeField] private GameObject thisSpotlight;
         [SerializeField] private GameObject playerCharacter;
 
+        [SerializeField] private Material spotlightRedMaterial;
+        [SerializeField] private Material spotlightYellowMaterial;
+
+        private Color spotlightColorRed = new Color(1f, 0f, 0.0319f, 1f);
+        private Color spotlightColorYellow = new Color(1f, 0.764f, 0f, 1f);
+
         // Declaration and setting a bool for wether the character is seen or not
         private bool isPlayerCharacterSeen = false;
 
@@ -41,6 +47,15 @@ namespace NathanHoward
             {
                 // Constantly updating the lights transform to look at the player character
                 thisSpotlight.transform.LookAt(playerCharacter.transform);
+
+                thisSpotlight.GetComponentInParent<Light>().color = spotlightColorRed;
+                thisSpotlight.GetComponentInChildren<MeshRenderer>().material = spotlightRedMaterial;
+                
+            }
+            else
+            {
+                thisSpotlight.GetComponentInParent<Light>().color = spotlightColorYellow;
+                thisSpotlight.GetComponentInChildren<MeshRenderer>().material = spotlightYellowMaterial;
             }
         }
     }
