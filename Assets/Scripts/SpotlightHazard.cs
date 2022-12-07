@@ -11,14 +11,26 @@ namespace NathanHoward
         [SerializeField] private GameObject thisSpotlightBeam;
         [SerializeField] private GameObject playerCharacter;
 
+        private Transform thisSpotlightLookAtStartPosition;
+
+        // Declaration of the lasergrid that activates when the
+        [SerializeField] private GameObject laserGrid;
+
+        // Declaration of the materials for the lightbeam
         [SerializeField] private Material spotlightRedMaterial;
         [SerializeField] private Material spotlightYellowMaterial;
 
+        // Declaration of the Unity.Color of the light
         private Color spotlightColorRed = new Color(1f, 0f, 0.0319f, 1f);
         private Color spotlightColorYellow = new Color(1f, 0.764f, 0f, 1f);
 
         // Declaration and setting a bool for wether the character is seen or not
         private bool isPlayerCharacterSeen = false;
+
+        private void Start()
+        {
+            Debug.Log(thisSpotlightLookAtStartPosition);
+        }
 
         // Method for when the collision is triggered
         private void OnTriggerEnter(Collider other)
@@ -49,12 +61,17 @@ namespace NathanHoward
                 // Constantly updating the lights transform to look at the player character
                 thisSpotlight.transform.LookAt(playerCharacter.transform);
 
+                // Changes the colour to red when player is seen
                 thisSpotlight.GetComponentInParent<Light>().color = spotlightColorRed;
                 thisSpotlight.GetComponentInChildren<MeshRenderer>().material = spotlightRedMaterial;
                 
             }
             else
             {
+                // Sets the spotlight to look back at its starting location
+                thisSpotlight.transform.LookAt(thisSpotlightLookAtStart);
+
+                // Change the colour to yellow when not seen
                 thisSpotlight.GetComponentInParent<Light>().color = spotlightColorYellow;
                 thisSpotlight.GetComponentInChildren<MeshRenderer>().material = spotlightYellowMaterial;
             }

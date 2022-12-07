@@ -18,13 +18,14 @@ namespace NathanHoward
         private void Update()
         {
             // Checks to make sure the player is close AND pressing the activate button
-            if (Input.GetKeyDown(KeyCode.Return) && playerIsClose == true && GameEvents.OnTangibleBlockButtonPressEvent != null)
+            if (Input.GetKeyDown(KeyCode.Return) && playerIsClose == true)
             {
                 Debug.Log("The enter key has been pressed.");
                 Debug.Log("the button is pressed");
                 
                 //Announcing the block toggler to our events script
-                GameEvents.OnTangibleBlockButtonPressEvent();
+                // useing ?.Invoke checks to makes sure that something is subscribed (listening) to the event
+                GameEvents.OnTangibleBlockButtonPressEvent?.Invoke();
                
             }
         }
