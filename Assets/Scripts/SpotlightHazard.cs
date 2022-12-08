@@ -11,8 +11,6 @@ namespace NathanHoward
         [SerializeField] private GameObject thisSpotlightBeam;
         [SerializeField] private GameObject playerCharacter;
 
-        private Transform thisSpotlightLookAtStartPosition;
-
         // Declaration of the lasergrid that activates when the
         [SerializeField] private GameObject laserGrid;
 
@@ -27,11 +25,6 @@ namespace NathanHoward
         // Declaration and setting a bool for wether the character is seen or not
         private bool isPlayerCharacterSeen = false;
 
-        private void Start()
-        {
-            Debug.Log(thisSpotlightLookAtStartPosition);
-        }
-
         // Method for when the collision is triggered
         private void OnTriggerEnter(Collider other)
         {
@@ -40,6 +33,9 @@ namespace NathanHoward
             
             // Changing of the bool to change Update method
             isPlayerCharacterSeen = true;
+
+            // Making the attached laser grid appear
+            laserGrid.SetActive(true);
         }
 
         // Method for when the collision is no longer detected
@@ -64,19 +60,17 @@ namespace NathanHoward
                 // Changes the colour to red when player is seen
                 thisSpotlight.GetComponentInParent<Light>().color = spotlightColorRed;
                 thisSpotlight.GetComponentInChildren<MeshRenderer>().material = spotlightRedMaterial;
-                
+
             }
             else
             {
                 // Sets the spotlight to look back at its starting location
-                thisSpotlight.transform.LookAt(thisSpotlightLookAtStart);
+                thisSpotlight.transform.LookAt(null);
 
                 // Change the colour to yellow when not seen
                 thisSpotlight.GetComponentInParent<Light>().color = spotlightColorYellow;
                 thisSpotlight.GetComponentInChildren<MeshRenderer>().material = spotlightYellowMaterial;
-            }
-
-            
+            }  
         }
     }
 }

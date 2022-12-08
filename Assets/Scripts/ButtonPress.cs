@@ -21,7 +21,7 @@ namespace NathanHoward
         private void Update()
         {
             // Checks to make sure the player is close AND pressing the activate button
-            if (Input.GetKeyDown(KeyCode.Return) && playerIsClose == true)
+            if (Input.GetKeyDown(KeyCode.E) && playerIsClose == true)
             {
                 Debug.Log("The enter key has been pressed.");
                 Debug.Log("the button is pressed");

@@ -31,13 +31,21 @@ namespace NathanHoward
             respawnVectorX = respawnPointGameObject.transform.position.x;
             respawnVectorY = respawnPointGameObject.transform.position.y;
             respawnVectorZ = respawnPointGameObject.transform.position.z;
-            Debug.Log("The X, Y and Z have been set.");
+            //Debug.Log("The X, Y and Z have been set.");
         }
 
         // Method that is called when a collision is detected
         private void OnCollisionEnter(Collision collision)
         {
-            Debug.Log("Collision with Spikes");
+            if (collision.collider == playerCharacter.GetComponent<BoxCollider>() || collision.collider == playerCharacter.GetComponent<CapsuleCollider>())
+            {
+                Debug.Log("Collision with Spikes");
+                CharacterDeath();
+            }
+        }
+
+        private void CharacterDeath()
+        {
 
             // OLD SCRIPT THAT RESETS SCENE
             // Getting the current scene name from the Unity SceneManager
